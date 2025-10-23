@@ -1,4 +1,5 @@
 :root {
+  --color-background: var(--color-black);
   /* color */
   --color-black: #3f454d;
   --color-white: #ffffff;
@@ -12,4 +13,79 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+.game {
+  height: 600px;
+  /* overflow-y: hidden; */
+}
+.game__header {
+  text-align: center;
+}
+.header__wrapper {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+.header__filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.filters__img {
+  width: 32px;
+  height: 32px;
+}
+.filters__color-btn {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.filters__color-btn.blue {
+  background-color: var(--color-blue);
+}
+.filters__color-btn.yellow {
+  background-color: var(--color-yellow);
+}
+.filters__color-btn.pink {
+  background-color: var(--color-pink);
+}
+/* main */
+.game__main {
+  height: 80%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.game__main::-webkit-scrollbar {
+  display: none;
+}
+.item__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+  background-color: var(--color-white);
+  border-radius: 8px;
+}
+.item__img {
+  width: 36px;
+  height: 36px;
 }
