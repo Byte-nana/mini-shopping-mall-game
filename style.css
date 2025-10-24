@@ -6,7 +6,6 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
-
   /* size */
   --base-space: 0.5rem;
   --size-scale: scale(1.2);
@@ -43,6 +42,7 @@ button {
 }
 .shopping {
   width: 80%;
+  max-width: 500px;
 }
 .shopping__logo {
   display: block;
@@ -123,5 +123,11 @@ button {
   .clothes__img:hover,
   .colours-btn:hover {
     transform: var(--size-scale);
+  }
+}
+/*  */
+@media screen and (min-width: 425px) {
+  .filters {
+    flex-direction: row;
   }
 }
