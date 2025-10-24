@@ -33,59 +33,88 @@ button {
   background: transparent;
   cursor: pointer;
 }
-.game {
-  height: 600px;
-  /* overflow-y: hidden; */
+.shopping {
+  width: 80%;
+  margin-block: 2rem;
 }
-.game__header {
-  text-align: center;
+.shopping__hero {
+  display: block;
+  margin: auto;
 }
-.header__wrapper {
+.filters {
   display: flex;
-  gap: 1rem;
-  margin: 1.5rem 0 1rem;
-}
-.header__filters {
-  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-block: 1rem;
+  gap: 0.5rem;
+}
+.filters__clothes {
+  display: flex;
   gap: 1rem;
 }
-.filters__img {
+.filters__colours {
+  display: flex;
+  gap: 0.8rem;
+}
+.clothes__img {
   width: 32px;
   height: 32px;
+  transition: all 300ms ease;
 }
-.filters__color-btn {
+.clothes__img:active {
+  transform: scale(1.2);
+}
+
+.colours-btn {
   padding: 0.5rem;
   font-size: 1rem;
+  border-radius: 8px;
+  transition: all 300ms ease;
 }
-.filters__color-btn.blue {
+.colours-btn:active {
+  transform: scale(1.2);
+}
+.colours-btn.blue-btn {
   background-color: var(--color-blue);
 }
-.filters__color-btn.yellow {
+.colours-btn.yellow-btn {
   background-color: var(--color-yellow);
 }
-.filters__color-btn.pink {
+.colours-btn.pink-btn {
   background-color: var(--color-pink);
 }
-/* main */
-.game__main {
-  height: 80%;
+/*  */
+.items {
+  height: 400px;
   overflow-y: auto;
   scrollbar-width: none;
 }
-.game__main::-webkit-scrollbar {
+.items::-webkit-scrollbar {
   display: none;
 }
 .item__row {
   display: flex;
   align-items: center;
+  padding: 0.5rem 1.5rem;
   margin-bottom: 0.5rem;
-  padding: 0.5rem 1rem;
-  gap: 1rem;
+  gap: 1.5rem;
   background-color: var(--color-white);
   border-radius: 8px;
 }
 .item__img {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
+}
+.item__wrapper {
+  font-size: 1.2rem;
+}
+/* hover */
+@media (hover: hover) {
+  .clothes__img:hover {
+    transform: scale(1.2);
+  }
+  .colours-btn:hover {
+    transform: scale(1.2);
+  }
 }
