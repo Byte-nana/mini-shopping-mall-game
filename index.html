@@ -6,11 +6,18 @@
     <title>Online Shopping</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="src/main.js" defer></script>
+    <script type="module" src="./src/filter.js" defer></script>
   </head>
   <body>
     <section class="shopping">
       <!-- Logo -->
-      <img class="shopping__logo" src="./img/logo.png" alt="a clothing store" />
+      <img
+        class="shopping__logo"
+        src="./img/logo.png"
+        alt="a clothing store"
+        data-type="all"
+        data-color="all"
+      />
       <!-- Buttons -->
       <div class="filters">
         <ul class="filters__clothes">
@@ -20,6 +27,7 @@
                 class="clothes__img"
                 src="./img/blue_t.png"
                 alt="blue t-shirt"
+                data-type="tshirt"
               />
             </button>
           </li>
@@ -29,6 +37,7 @@
                 class="clothes__img"
                 src="./img/blue_p.png"
                 alt="blue trousers"
+                data-type="pants"
               />
             </button>
           </li>
@@ -38,19 +47,22 @@
                 class="clothes__img"
                 src="./img/blue_s.png"
                 alt="blue skirt"
+                data-type="skirt"
               />
             </button>
           </li>
         </ul>
         <ul class="filters__colours">
           <li>
-            <button class="colours-btn blue-btn">Blue</button>
+            <button class="colours-btn blue-btn" data-color="blue">Blue</button>
           </li>
           <li>
-            <button class="colours-btn yellow-btn">Yellow</button>
+            <button class="colours-btn yellow-btn" data-color="yellow">
+              Yellow
+            </button>
           </li>
           <li>
-            <button class="colours-btn pink-btn">Pink</button>
+            <button class="colours-btn pink-btn" data-color="pink">Pink</button>
           </li>
         </ul>
       </div>

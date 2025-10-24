@@ -1,10 +1,14 @@
 'use strict';
 
 const items = document.querySelector('.items');
+const btns = document.querySelector('.filters');
 
 function createItem(data) {
   const itemRow = document.createElement('li');
   itemRow.setAttribute('class', 'item__row');
+  itemRow.setAttribute('data-type', data.type);
+  itemRow.setAttribute('data-color', data.color);
+
   itemRow.innerHTML = `
     <img
         class="item__img"
@@ -23,6 +27,11 @@ fetch('./data/data.json')
       const list = createItem(item);
       items.appendChild(list);
     });
+
+    const itemRows = document.querySelectorAll('.item__row');
+    onFilterType(itemRows);
+    onFilterColor(itemRows);
+    showAll(itemRows);
   })
   .catch((error) => {
     console.error('Error loading JSON:', error);
@@ -30,3 +39,40 @@ fetch('./data/data.json')
     <img src="./img/error_img.png" style="width: 100%"  >
     `;
   });
+
+function onFilterType(itemRows) {
+  btns.addEventListener('click', (e) => {
+    const filter = e.target.dataset.type;
+    if (!filter) return;
+
+    itemRows.forEach((item) => {
+      if (filter === item.dataset.type) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+}
+
+function onFilterColor(itemRows) {
+  btns.addEventListener('click', (e) => {
+    const filter = e.target.dataset.color;
+    if (!filter) return;
+
+    itemRows.forEach((item) => {
+      if (filter === item.dataset.color) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+}
+
+const logo = document.querySelector('.shopping__logo');
+function showAll(itemRows) {
+  logo.addEventListener('click', () => {
+    itemRows.forEach((item) => (item.style.display = 'flex'));
+  });
+}
