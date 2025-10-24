@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Shopping</title>
+    <!-- SEO -->
+    <title>Online Shopping Mini-Game</title>
+    <meta name="description" content="Online shopping mall mini game" />
+    <meta name="author" content="Byte-nana" />
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="src/main.js" defer></script>
-    <script type="module" src="./src/filter.js" defer></script>
+    <!-- JavaScript -->
+    <!-- <script type="module" src="src/main.js" defer></script> -->
+    <script type="module" src="./src/main-refactor.js" defer></script>
   </head>
   <body>
     <section class="shopping">
@@ -21,7 +26,8 @@
                 class="clothes__img"
                 src="./img/blue_t.png"
                 alt="blue t-shirt"
-                data-type="tshirt"
+                data-key="type"
+                data-value="tshirt"
               />
             </button>
           </li>
@@ -31,7 +37,8 @@
                 class="clothes__img"
                 src="./img/blue_p.png"
                 alt="blue trousers"
-                data-type="pants"
+                data-key="type"
+                data-value="pants"
               />
             </button>
           </li>
@@ -41,22 +48,39 @@
                 class="clothes__img"
                 src="./img/blue_s.png"
                 alt="blue skirt"
-                data-type="skirt"
+                data-key="type"
+                data-value="skirt"
               />
             </button>
           </li>
         </ul>
         <ul class="filters__colours">
           <li>
-            <button class="colours-btn blue-btn" data-color="blue">Blue</button>
+            <button
+              class="colours-btn blue-btn"
+              data-key="color"
+              data-value="blue"
+            >
+              Blue
+            </button>
           </li>
           <li>
-            <button class="colours-btn yellow-btn" data-color="yellow">
+            <button
+              class="colours-btn yellow-btn"
+              data-key="color"
+              data-value="yellow"
+            >
               Yellow
             </button>
           </li>
           <li>
-            <button class="colours-btn pink-btn" data-color="pink">Pink</button>
+            <button
+              class="colours-btn pink-btn"
+              data-key="color"
+              data-value="pink"
+            >
+              Pink
+            </button>
           </li>
         </ul>
       </div>
