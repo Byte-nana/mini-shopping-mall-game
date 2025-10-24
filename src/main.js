@@ -32,11 +32,8 @@ fetch('./data/data.json')
     const itemRows = document.querySelectorAll('.item__row');
 
     btns.addEventListener('click', (e) => {
-      onFilterType(itemRows, e.target);
-    });
-
-    btns.addEventListener('click', (e) => {
-      onFilterColor(itemRows, e.target);
+      onFilter(itemRows, e.target, 'type');
+      onFilter(itemRows, e.target, 'color');
     });
 
     logo.addEventListener('click', () => {
@@ -50,25 +47,12 @@ fetch('./data/data.json')
     `;
   });
 
-function onFilterType(itemRows, target) {
-  const filter = target.dataset.type;
+function onFilter(itemRows, target, key) {
+  const filter = target.dataset[key];
   if (!filter) return;
 
   itemRows.forEach((item) => {
-    if (filter === item.dataset.type) {
-      item.style.display = 'flex';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-}
-//
-function onFilterColor(itemRows, target) {
-  const filter = target.dataset.color;
-  if (!filter) return;
-
-  itemRows.forEach((item) => {
-    if (filter === item.dataset.color) {
+    if (filter === item.dataset[key]) {
       item.style.display = 'flex';
     } else {
       item.style.display = 'none';
