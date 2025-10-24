@@ -2,6 +2,7 @@
 
 const items = document.querySelector('.items');
 const btns = document.querySelector('.filters');
+const logo = document.querySelector('.shopping__logo');
 
 function createItem(data) {
   const itemRow = document.createElement('li');
@@ -29,9 +30,18 @@ fetch('./data/data.json')
     });
 
     const itemRows = document.querySelectorAll('.item__row');
-    onFilterType(itemRows);
-    onFilterColor(itemRows);
-    showAll(itemRows);
+
+    btns.addEventListener('click', (e) => {
+      onFilterType(itemRows, e.target);
+    });
+
+    btns.addEventListener('click', (e) => {
+      onFilterColor(itemRows, e.target);
+    });
+
+    logo.addEventListener('click', () => {
+      onShowAll(itemRows);
+    });
   })
   .catch((error) => {
     console.error('Error loading JSON:', error);
@@ -40,39 +50,32 @@ fetch('./data/data.json')
     `;
   });
 
-function onFilterType(itemRows) {
-  btns.addEventListener('click', (e) => {
-    const filter = e.target.dataset.type;
-    if (!filter) return;
+function onFilterType(itemRows, target) {
+  const filter = target.dataset.type;
+  if (!filter) return;
 
-    itemRows.forEach((item) => {
-      if (filter === item.dataset.type) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
-    });
+  itemRows.forEach((item) => {
+    if (filter === item.dataset.type) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+//
+function onFilterColor(itemRows, target) {
+  const filter = target.dataset.color;
+  if (!filter) return;
+
+  itemRows.forEach((item) => {
+    if (filter === item.dataset.color) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
   });
 }
 
-function onFilterColor(itemRows) {
-  btns.addEventListener('click', (e) => {
-    const filter = e.target.dataset.color;
-    if (!filter) return;
-
-    itemRows.forEach((item) => {
-      if (filter === item.dataset.color) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  });
-}
-
-const logo = document.querySelector('.shopping__logo');
-function showAll(itemRows) {
-  logo.addEventListener('click', () => {
-    itemRows.forEach((item) => (item.style.display = 'flex'));
-  });
+function onShowAll(itemRows) {
+  itemRows.forEach((item) => (item.style.display = 'flex'));
 }
