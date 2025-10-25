@@ -4,7 +4,7 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "description": "Mini game where you sort clothes by types(t-shirt, trousers, skirt) and colours(blue, yellow, pink) by clicking buttons.",
+  "description": "Mini game where you sort clothes by types and colours.",
   "lang": "en",
   "dir": "auto",
   "theme_color": "#FBC2EB",
@@ -14,53 +14,51 @@
   "icons": [
     {
       "purpose": "maskable",
-      "sizes": "48x48",
-      "src": "./icons/maskable_icon_x48.png",
-      "type": "image/png"
-    },
-    {
-      "purpose": "maskable",
-      "sizes": "72x72",
-      "src": "./icons/maskable_icon_x72.png",
-      "type": "image/png"
-    },
-    {
-      "purpose": "maskable",
-      "sizes": "96x96",
-      "src": "./icons/maskable_icon_x96.png",
-      "type": "image/png"
-    },
-    {
-      "purpose": "maskable",
-      "sizes": "128x128",
-      "src": "./icons/maskable_icon_x128.png",
-      "type": "image/png"
-    },
-    {
-      "purpose": "maskable",
       "sizes": "192x192",
-      "src": "./icons/maskable_icon_x192.png",
+      "src": "./icons/maskable/maskable_icon_x192.png",
       "type": "image/png"
     },
     {
-      "purpose": "maskable",
-      "sizes": "384x384",
-      "src": "./icons/maskable_icon_x384.png",
+      "sizes": "192x192",
+      "src": "./icons/any/icon_x192.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "512x512",
-      "src": "./icons/maskable_icon_x512.png",
+      "src": "./icons/maskable/maskable_icon_x512.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "./icons/any/icon_x512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "1024x1024",
+      "src": "./icons/maskable/maskable_icon.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "1024x1024",
+      "src": "./icons/any/icon.png",
       "type": "image/png"
     }
   ],
   "screenshots": [
     {
-      "src": "./img/screen_shot.png",
-      "sizes": "1146x1810",
+      "src": "./img/screenshot_mobile.png",
+      "sizes": "1080x1920",
       "type": "image/png",
       "description": "A screenshot of the home page"
+    },
+    {
+      "src": "./img/screenshot_desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "description": "A wide screenshot for desktop install UI"
     }
   ],
   "related_applications": [],
