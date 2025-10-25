@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Manifest for PWA installation -->
+    <link rel="manifest" href="./manifest.json" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO -->
@@ -28,12 +30,16 @@
       content="black-translucent"
     />
     <meta name="apple-mobile-web-app-title" content="Sort & Shop" />
-    <!-- Manifest for PWA installation -->
-    <link rel="manifest" href="./manifest.json" />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- JavaScript -->
     <script type="module" src="./src/main_refactor.js" defer></script>
+    <!-- Service worker -->
+    <script type="module">
+      import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+      const el = document.createElement('pwa-update');
+      document.body.appendChild(el);
+    </script>
   </head>
   <body>
     <section class="shopping">

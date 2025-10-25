@@ -15,32 +15,35 @@
     {
       "purpose": "maskable",
       "sizes": "192x192",
-      "src": "./icons/maskable/maskable_icon_x192.png",
+      "src": "./icons/maskable/maskable-icon-192.png",
       "type": "image/png"
     },
     {
+      "purpose": "any",
       "sizes": "192x192",
-      "src": "./icons/any/icon_x192.png",
+      "src": "./icons/any/icon-192.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "512x512",
-      "src": "./icons/maskable/maskable_icon_x512.png",
+      "src": "./icons/maskable/maskable-icon-512.png",
       "type": "image/png"
     },
     {
+      "purpose": "any",
       "sizes": "512x512",
-      "src": "./icons/any/icon_x512.png",
+      "src": "./icons/any/icon-512.png",
       "type": "image/png"
     },
     {
       "purpose": "maskable",
       "sizes": "1024x1024",
-      "src": "./icons/maskable/maskable_icon.png",
+      "src": "./icons/maskable/maskable-icon.png",
       "type": "image/png"
     },
     {
+      "purpose": "any",
       "sizes": "1024x1024",
       "src": "./icons/any/icon.png",
       "type": "image/png"
